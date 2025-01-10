@@ -62,19 +62,7 @@ To develop a simple application that serves as a REST API for movie management, 
      - Service configuration to expose the application locally.
    - Include readiness and liveness probes in the deployment to ensure robust health checking.
 
-## Non-Functional Requirements
-- **Performance**: The API should respond within 200ms for all endpoints under normal load.
-- **Scalability**: The application should be able to handle up to 100 concurrent users.
-- **Security**: Implement basic authentication for API access. Consider using JWT (JSON Web Tokens) for more robust security.
-
-## Technical Specifications
-- **Programming Language**: Java with Spring Boot framework.
-- **Database Technology**: MongoDB for data storage.
-- **Containerization Tool**: Docker.
-- **CI/CD Tool**: GitHub Actions.
-- **Orchestration Tool**: Kubernetes via Minikube.
-- **Testing Framework**: JUnit for unit testing, Mockito for mocking data access.
-
+ 
 ## Documentation
 The following documentation will be included in the `README.md` file:
 1. Steps to build and run the application locally using Docker.
@@ -102,4 +90,4 @@ The following documentation will be included in the `README.md` file:
 5. Comprehensive `README.md` with setup instructions and CI/CD details.
 6. Screenshots or outputs verifying successful deployment and functionality.
 
-By adhering to this PRD, the development team will have clear guidance on building, deploying, and documenting the movie management application efficiently while leveraging modern DevOps practices.
+ 
