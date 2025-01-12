@@ -24,11 +24,15 @@ jobs:
       with:
         context: ./backend
         push: true
-        tags: gicheha/kyoskbackend:latest, gicheha/kyoskbackend:${GITHUB_SHA::8}
+        tags: |
+          gicheha/kyoskbackend:latest
+          gicheha/kyoskbackend:${{ github.sha }}
     
     - name: Build and push Frontend image
       uses: docker/build-push-action@v5
       with:
         context: ./frontend
         push: true
-        tags: gicheha/frontend:latest, gicheha/frontend:${GITHUB_SHA::8}
+        tags: |
+          gicheha/frontend:latest
+          gicheha/frontend:${{ github.sha }}
