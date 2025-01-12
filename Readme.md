@@ -158,3 +158,15 @@ Backend environment variables can be configured:
 - `MONGODB_HOST` - MongoDB host (default: localhost)
 - `MONGODB_PORT` - MongoDB port (default: 27017)
 - `MONGODB_DATABASE` - Database name (default: moviedb)
+
+
+### pushing to docker hub
+```
+❯ docker build -t gicheha/frontend .
+❯ docker push gicheha/frontend
+```
+
+```
+❯ docker build -t gicheha/kyoskbackend .
+❯ docker push gicheha/kyoskbackend
+```
