@@ -6,7 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   selector: 'app-root',
   template: `
     <mat-toolbar color="primary">
-      <span>Movie Management System</span>
+      <span>Movie Management System Trail 1</span>
     </mat-toolbar>
     <main class="main-content">
       <router-outlet></router-outlet>
