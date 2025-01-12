@@ -19,7 +19,7 @@ spec:
       containers:
       - name: backend
         image: gicheha/kyoskbackend
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
