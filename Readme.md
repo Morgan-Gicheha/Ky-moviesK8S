@@ -3,7 +3,9 @@
 This application consists of a Spring Boot backend and an Angular frontend, containerized with Docker and deployed using Kubernetes.
 
 Dockerhub link: https://hub.docker.com/u/gicheha
+
 github link: https://github.com/gicheha
+
 project repo link: https://github.com/Morgan-Gicheha/Ky-moviesK8S
 
 
