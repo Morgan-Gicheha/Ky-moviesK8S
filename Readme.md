@@ -2,17 +2,63 @@
 
 This application consists of a Spring Boot backend and an Angular frontend, containerized with Docker and deployed using Kubernetes.
 
+Dockerhub link: https://hub.docker.com/u/gicheha
+github link: https://github.com/gicheha
+project repo link: https://github.com/Morgan-Gicheha/Ky-moviesK8S
+
+
+### running the project
+clone the repo
+1. `git clone https://github.com/Morgan-Gicheha/Ky-moviesK8S.git`
+
+change directory to the project
+
+2. `cd Ky-moviesK8S`
+
+start minikube
+
+3. `minikube start`
+
+apply the manifests
+
+4. `kubectl apply -f k8s/`
+
+port forward the backend service
+
+5. `kubectl port-forward svc/backend-service 8080:8080 #mac`
+
+port forward the frontend service
+
+6. `kubectl port-forward svc/frontend-service 8081:80 #mac`
+
+open the frontend in the browser
+
+7. `http://localhost:8081`
+
+
 ## Git commands
 add: `git add .`
 
 commit: `git commit -m "commit message"`
 
-![commit](./docs/images/git%20commiting%20shot.png)
+![Git Commit Process](./docs/images/git%20commiting%20shot.png)
 
 push: `git push`
 
+## Docker Image Management
 
+### Building and Pushing Images
+```bash
+# Build and push frontend image
+docker build -t gicheha/frontend .
+docker push gicheha/frontend
+```
+![Docker Push Process](./docs/images/docker%20push.png)
 
+### GitHub Actions Workflow
+Automated build and push to Docker Hub:
+
+![Workflow Docker Hub Push](./docs/images/workflow%20push%20to%20dockerhb.png)
 
 ## Backend (Spring Boot)
 
@@ -43,6 +89,43 @@ docker run -d --name movie-app \
 - `GET /movies` - Retrieve all movies
 - `POST /movies` - Add a new movie
 - `GET /health` - Check application health status
+
+## Kubernetes Deployment
+
+### Starting Minikube
+```bash
+minikube start
+```
+![Starting Minikube](./docs/images/startingMinikube.png)
+
+### Applying Manifests
+
+1. Apply Backend Manifest:
+```bash
+kubectl apply -f k8s/backend-deployment.yml
+```
+![Applying Backend Manifest](./docs/images/applying%20backent%20manifest.png)
+
+2. Apply All Manifests:
+```bash
+kubectl apply -f k8s/
+```
+![Applying All Manifests](./docs/images/applying%20all%20manifest%20files.png)
+
+### Port Forwarding
+```bash
+kubectl port-forward svc/backend-service 8080:8080
+```
+![Port Forwarding](./docs/images/porfowarding.png)
+
+### Running Cluster
+View of the running Kubernetes cluster:
+![Running Cluster](./docs/images/running%20cluster.png)
+
+### Debugging
+When encountering issues:
+![Debugging Process 1](./docs/images/debugging.png)
+![Debugging Process 2](./docs/images/debug%202.png)
 
 ## Frontend (Angular)
 
@@ -124,26 +207,6 @@ The application will be available at `http://localhost:4200`
 The frontend communicates with the backend at `http://localhost:8080/movies` for:
 - GET request to fetch all movies
 - POST request to add new movies
-
-## Kubernetes Deployment
-
-change directory to k8s for dev environment
-`
-eval $(minikube docker-env)
-`
-
-kubectl delete -f k8s/backend-deployment.yml && kubectl apply -f k8s/backend-deployment.yml
-
-minikube service backend-service
-
-## service port fowaring
-
-❯ kubectl port-forward svc/backend-service 8080:8080
-
-
-
-
-
 
 ## Development Notes
 
