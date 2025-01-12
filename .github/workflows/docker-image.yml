@@ -32,3 +32,4 @@ jobs:
         context: ./frontend
         push: true
         tags: gicheha/frontend:latest
+

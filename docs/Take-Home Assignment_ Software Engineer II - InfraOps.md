@@ -63,4 +63,4 @@ Please submit your GitHub repository link with all deliverables. If you have que
 
 We value originality and problem-solving over perfection. Please ensure you explain and justify every decision in your solution. We shall follow up with this during the final tech interview to discuss the same.
 
-Good luck, and we look forward to reviewing your work! 🚀
+
