@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 interface Movie {
   id?: string;
@@ -13,7 +14,7 @@ interface Movie {
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:8080/movies';
+  private apiUrl = environment.apiUrl + '/movies';
 
   constructor(private http: HttpClient) { }
 

@@ -20,7 +20,7 @@ push: `git push`
 
 ```bash
 # Build Docker image for backend
-docker build -t movie-management:latest ./backend
+docker build -t backend:latest ./backend
 
 # Create Docker network for communication between services
 docker network create movie-network
@@ -36,7 +36,7 @@ docker run -d --name movie-app \
     --network movie-network \
     -p 8080:8080 \
     -e SPRING_DATA_MONGODB_HOST=mongodb \
-    movie-management:latest
+    backend:latest
 ```
 
 ### Important Backend Endpoints
@@ -127,7 +127,23 @@ The frontend communicates with the backend at `http://localhost:8080/movies` for
 
 ## Kubernetes Deployment
 
-[Kubernetes deployment commands will be added once implemented]
+change directory to k8s for dev environment
+`
+eval $(minikube docker-env)
+`
+
+kubectl delete -f k8s/backend-deployment.yml && kubectl apply -f k8s/backend-deployment.yml
+
+minikube service backend-service
+
+## service port fowaring
+
+❯ kubectl port-forward svc/backend-service 8080:8080
+
+
+
+
+
 
 ## Development Notes
 
