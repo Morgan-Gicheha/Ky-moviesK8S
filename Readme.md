@@ -36,6 +36,17 @@ open the frontend in the browser
 7. `http://localhost:8081`
 
 
+### 	Explanation of the CI/CD pipeline in GitHub Actions.
+
+the CI/CD pipeline is implemented using GitHub Actions. The pipeline consists of the following steps:
+
+When code is pushed to the main branch:
+- Build and push Docker images to Docker Hub
+- tage image with git sha and latest
+- the action pushes the images to Docker Hub
+- Deploy to local cluster using kubectl `kubectl apply -f k8s/`
+
+
 ## Git commands
 add: `git add .`
 
